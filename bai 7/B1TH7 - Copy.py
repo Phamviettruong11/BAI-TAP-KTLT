@@ -1,10 +1,13 @@
-print("PHAM VIET TRUONG MSV:235752021610101")
-input_file=open('D:/a.txt','r', encoding='utf-8' )
-for line in input_file:
-    l=len(line)
-    s=' '
-    while(l>=1):
-        s=s+line[l-1]
-        l=l-1
-    print(s)
-input_file.close()
+def read_and_reverse_file (file_path) :
+    try:
+        with open (file_path, 'r') as file:
+            lines = file. readlines ()
+            reversed_lines - lines[::-1]
+            for line in reversed_lines:
+                print (line, end='')
+    except FileNotFoundError:
+         print (f"Không tim thảy file: (file_path)")
+    except Exception as e:
+         print (f"Đã xảy ra lỗi: (e)")
+file_path = input ("Nhập đường dẫn tới file: ")
+read_and_reverse_file (file_path)
